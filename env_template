@@ -1,3 +1,4 @@
 FLASK_APP=run
 FLASK_ENV=development | production
 FLASK_SECRET_KEY=my-secret-token
+API_KEY=my-secret-api-key
