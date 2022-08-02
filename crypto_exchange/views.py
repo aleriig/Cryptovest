@@ -1,8 +1,10 @@
+from flask import render_template
+
 from . import app
 
 @app.route('/')
 def home():
-    return "you are in the homepage"
+    return render_template('home.html')
 
 @app.route('/purchase', methods=['GET', "POST"])
 def buy():
