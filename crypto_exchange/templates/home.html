@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+{{ super() }}: Home
+{% endblock %}
+
+{% block page_title %}
+Movements
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<table class="paper">
+  <tr>
+    <th class="title-table">Date</th>
+    <th class="title-table">Time</th>
+    <th class="title-table">From</th>
+    <th class="title-table number">Q</th>
+    <th class="title-table">To</th>
+    <th class="title-table number">Q</th>
+    <th class="title-table number">Unit price</th>
+  </tr>
+{% if movs %}
+  {% for mov in movs %}
+    <tr>
+      <td>
+        {% if mov.date %}
+        {{ mov.date }}
+        {% else %}
+        ---
+        {% endif %}
+      </td>
+      <td>
+        {% if mov.time %}
+        {{ mov.time }}
+        {% else %}
+        ---
+        {% endif %}
+      </td>
+      <td>{{ mov.currency_from }}</td>  
+      <td class="number">{{ mov.amount_from }}</td>
+      <td>{{ mov.currency_to }}</td>
+      <td class="number">{{ mov.amount_to }}</td>
+      <td class="number">{{ mov.unit_price }}</td>
+    </tr>
+    {% if mov.errors %}
+    <tr>
+      <td colspan="4" class="error">
+        {% for error in mov.errors %}
+        {{ error }}
+        {% endfor %}
+      </td>
+    </tr>
+    {% endif %}
+  {% endfor %}
+{% else %}
+<tr>
+  <td colspan="4" class="empty-list">There isn't movements to show</td>
+</tr>
+{% endif %}
+</table>
+{% endblock %}
