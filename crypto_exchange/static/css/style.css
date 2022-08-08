@@ -80,9 +80,16 @@ header {
     height: 60px;
     width: 60px;
     background-color: white;
+    color: black;
+  }
+
+  .field-form .check {
     color: green;
   }
 
+  .field-form .remove {
+    color: red;
+  }
   
   
   /* .field-form input:not([type="radio"]) {
