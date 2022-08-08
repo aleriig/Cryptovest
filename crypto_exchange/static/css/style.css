@@ -58,7 +58,7 @@ header {
   
   /* Estilos del formulario */
   
-  .campo-formulario label {
+  .field-form label {
     display: block;
     font-size: 1rem;
     font-weight: bold;
@@ -66,13 +66,26 @@ header {
     margin-top: .75rem;
   }
   
-  .campo-formulario .radio-label {
+  .field-form .radio-label {
     display: inline-block;
     margin-right: 2rem;
     margin-bottom: .5rem;
   }
-  
-  .campo-formulario input:not([type="radio"]) {
-    width: 100%;
+
+  .field-form input:not() {
+    flex-direction: row;
   }
+
+  .field-form button {
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    color: green;
+  }
+
+  
+  
+  /* .field-form input:not([type="radio"]) {
+    width: 100%;
+  } */
   

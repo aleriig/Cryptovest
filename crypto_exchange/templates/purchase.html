@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+{{ super() }}: buy crypto
+{% endblock %}
+
+{% block page_title %}
+New purchase
+{% endblock %}
+
+{% block content %}
+{{ super()}}
+
+<form action="/purchase" method="post">
+  <div class="field-form">
+    <label for="currency_from">From</label>
+    <select name="currency_from" id="currency_from">
+      <option value="EUR">EUR - Euro</option>
+      <option value="ETH">ETH - Ethereum</option>
+      <option value="BNB">BNB - Binance</option>
+      <option value="XRP">XRP - Ripple</option>
+      <option value="ADA">ADA - Cardano</option>
+      <option value="SOL">SOL - Solana</option>
+      <option value="DOT">DOT - Polkadot</option>
+      <option value="DOGE">DOGE - Dogecoin</option>
+      <option value="MATIC">MATIC - Polygon</option>
+      <option value="ALGO">ALGO - Algorand</option>
+    </select>
+
+  </div>
+  <div class="field-form">
+    <label for="currency_to">To</label>
+    <select name="currency_to" id="currency_to">
+      <option value="EUR">EUR - Euro</option>
+      <option value="ETH">ETH - Ethereum</option>
+      <option value="BNB">BNB - Binance</option>
+      <option value="XRP">XRP - Ripple</option>
+      <option value="ADA">ADA - Cardano</option>
+      <option value="SOL">SOL - Solana</option>
+      <option value="DOT">DOT - Polkadot</option>
+      <option value="DOGE">DOGE - Dogecoin</option>
+      <option value="MATIC">MATIC - Polygon</option>
+      <option value="ALGO">ALGO - Algorand</option>
+    </select>
+  </div>
+  <div class="field-form">
+    <label for="amount">Q</label>
+    <input type="number" id="amount" name="amount" required>
+  </div>
+  <div class="field-form" requi>
+    <button class="calculator" type="submit">
+      <i class="fa fa-calculator fa-3x"></i>
+    </button>
+  </div>
+  <div class="field-form" requi>
+    <button class="check" type="submit">
+      <i class="fa fa-check fa-3x"></i>
+    </button>
+  </div>
+  <div class="field-form" requi>
+    <button class="check" type="submit">
+      <i class="fa fa-remove fa-3x"></i>
+    </button>
+  </div>
+
+</form>
+{% endblock %}
